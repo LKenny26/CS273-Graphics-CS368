@@ -26,12 +26,12 @@ public class E1 extends JPanel
         super.paint(g);
         
         // set the background to red
-        setBackground(red);
+        setBackground(Color.red);
 
         // Draw some squares of various colors
         g.setColor(Color.blue);
         g.drawRect(20,20,100,100); // blue square, outline
-        g.fillRect(50,50 200,200); // blue square, filled
+        g.fillRect(50,50,200,200); // blue square, filled
         g.setColor(Color.orange);
         g.fillRect(300,10,40,40); // orange square, filled
         g.fillRect(400,200,6,6); // small orange square, filled
