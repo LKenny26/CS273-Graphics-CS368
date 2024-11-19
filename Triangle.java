@@ -5,6 +5,7 @@
 // Import a couple of library-packages
 import java.awt.*;
 import javax.swing.*;
+import java.util.*;
 
 /** class Triangle
  *
@@ -22,8 +23,60 @@ public class Triangle extends Canvas
         //This line is important, don't remove it!
         super.paint(g);
 
-        //==>Replace this comment with your code<==
+        // Yellow Background
+        setBackground(Color.yellow);
+
+        // Create a Scanner object
+        Scanner scan = new Scanner(System.in); 
+
+        Polygon triangle = new Polygon();
+
+        // Get first point of the triangle
+        System.out.println("Enter x for the first point");
+        String coord_one_x = scan.nextLine();
+        System.out.println("Enter y for the first point");
+        String coord_one_y = scan.nextLine();
+        triangle.addPoint(Integer.parseInt(coord_one_x),Integer.parseInt(coord_one_y));
+
+        // Get Second point for the triangle
+        System.out.println("Enter x for the second point");
+        String coord_two_x = scan.nextLine();
+        System.out.println("Enter y for the second point");
+        String coord_two_y = scan.nextLine();
+        triangle.addPoint(Integer.parseInt(coord_two_x),Integer.parseInt(coord_two_y));
         
+        //Get last point for the triangle
+        System.out.println("Enter x for the last point");
+        String coord_three_x = scan.nextLine();
+        System.out.println("Enter y for the last point");
+        String coord_three_y = scan.nextLine();
+        triangle.addPoint(Integer.parseInt(coord_three_x),Integer.parseInt(coord_three_y));
+
+        if (Integer.parseInt(coord_one_x) < 0 || Integer.parseInt(coord_two_x) < 0 || Integer.parseInt(coord_three_x) < 0){
+            System.out.println("Error: One of the x points is negative and would go off the screen on the left.");
+            System.out.println("Remember when x is negative it goes left, and when it is posistive it goes right.");
+            System.exit(ABORT);
+        }
+        if(Integer.parseInt(coord_one_x) > 600 || Integer.parseInt(coord_two_x) > 600 || Integer.parseInt(coord_three_x) > 600){
+            System.out.println("Error: One of the x points is greater than the window and would go off the screen on the right.");
+            System.out.println("Remember when y is negative it goes left, and when it is posistive it goes right.");
+            System.exit(ABORT);
+        }
+        if (Integer.parseInt(coord_one_y) < 0 || Integer.parseInt(coord_two_y) < 0 || Integer.parseInt(coord_three_y) < 0){
+            System.out.println("Error: One of the y points is negative and would go off the screen on the top.");
+            System.out.println("Remember when y is negative it goes up, and when it is posistive it goes down.");
+            System.exit(ABORT);
+        }
+        if(Integer.parseInt(coord_one_y) > 600 || Integer.parseInt(coord_two_y) > 600 || Integer.parseInt(coord_three_y) > 600){
+            System.out.println("Error: One of the y points is greater than the window and would go off the screen on the bottom.");
+            System.out.println("Remember when y is negative it goes up, and when it is posistive it goes down.");
+            System.exit(ABORT);
+        }
+
+        scan.close();
+        g.setColor(Color.green);
+        g.fillPolygon(triangle);
+
     }//paint
 
     /**
