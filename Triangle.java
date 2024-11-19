@@ -33,7 +33,8 @@ public class Triangle extends Canvas
          *  Context: Students have a hard time with Coords. The goal is to help the gain better knowledge of 
          *  how the system works.
          *  Importance: With fixing broken code the student may familiarize themself with looking at documentation
-         *  and using their gained knowledge with Boxes.java to fix the coords.
+         *  and using their gained knowledge with Boxes.java to fix the coords. Hopefully after completeing these 
+         *  two intro type practices, they will have the coord knowledge for House.java and Jackolantern.java
          */
 
         // A previous student attemped to draw a triangle without looking up how to use a Polygon object

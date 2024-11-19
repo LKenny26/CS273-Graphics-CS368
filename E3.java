@@ -29,7 +29,7 @@ public class E3 extends JPanel
         setBackground(Color.blue);
 
         // Set the font
-        g.setFont(new Font("SansSerif", 0, 18));
+        G.setFont(new Font("SansSerif", 0, 18);
 
         // Draw some red text
         g.setColor(Color.red);
@@ -37,7 +37,7 @@ public class E3 extends JPanel
 
         // Draw some green text
         g.setColor(Color.green);
-        g.drawString("Isn't it nice that we can draw some text", 200, 200);
+        g.drawString("Isn't it nice that we can draw some text, 200, 200);
 
         // Draw some yellow text
         g.setColor(Color.yellow);

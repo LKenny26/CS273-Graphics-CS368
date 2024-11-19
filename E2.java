@@ -26,10 +26,10 @@ public class E2 extends JPanel
         super.paint(g);
 
         // set the background to yellow
-        setBackground(Color.yellow);
+        setBackground(Color.yellow)
 
         // set the color for our lines
-        g.setColor(Color.black);
+        g.setcolor(black);
 
         // Draw some connected lines that form a path
         g.drawLine(30,40,200,300);
