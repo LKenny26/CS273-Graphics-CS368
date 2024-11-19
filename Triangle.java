@@ -23,59 +23,41 @@ public class Triangle extends Canvas
         //This line is important, don't remove it!
         super.paint(g);
 
-        // Yellow Background
-        setBackground(Color.yellow);
+        /*
+         *  Proposed Change to Triangle.java
+         *  Justification: Ideally students can use the provided how to guide to draw a Polygon. 
+         *  The purpose of this change is to have the students see that the triangle is defined
+         *  poorly and also has coords that are just plain wrong. The student should be able to 
+         *  recogize. This also draws the points for the students before drawing the polygon, so
+         *  students know where each point is going to be.
+         *  Context: Students have a hard time with Coords. The goal is to help the gain better knowledge of 
+         *  how the system works.
+         *  Importance: With fixing broken code the student may familiarize themself with looking at documentation
+         *  and using their gained knowledge with Boxes.java to fix the coords.
+         */
 
-        // Create a Scanner object
-        Scanner scan = new Scanner(System.in); 
+        // A previous student attemped to draw a triangle without looking up how to use a Polygon object
+        // Fix the broken code to draw a triangle
+        Polygon = Polygon();
 
-        Polygon triangle = new Polygon();
+        int x1 = -2000000;
+        int y1 = 0;
+        int x2 = 100;
+        int y2 = -50;
+        int x3 = 1/2 50;
+        int y3 = 5;
 
-        // Get first point of the triangle
-        System.out.println("Enter x for the first point");
-        String coord_one_x = scan.nextLine();
-        System.out.println("Enter y for the first point");
-        String coord_one_y = scan.nextLine();
-        triangle.addPoint(Integer.parseInt(coord_one_x),Integer.parseInt(coord_one_y));
 
-        // Get Second point for the triangle
-        System.out.println("Enter x for the second point");
-        String coord_two_x = scan.nextLine();
-        System.out.println("Enter y for the second point");
-        String coord_two_y = scan.nextLine();
-        triangle.addPoint(Integer.parseInt(coord_two_x),Integer.parseInt(coord_two_y));
-        
-        //Get last point for the triangle
-        System.out.println("Enter x for the last point");
-        String coord_three_x = scan.nextLine();
-        System.out.println("Enter y for the last point");
-        String coord_three_y = scan.nextLine();
-        triangle.addPoint(Integer.parseInt(coord_three_x),Integer.parseInt(coord_three_y));
+        triangle = new point(x1, y1);
+        triangle = new point(x2, y2);
+        triangle = new point(x3, y3);
 
-        if (Integer.parseInt(coord_one_x) < 0 || Integer.parseInt(coord_two_x) < 0 || Integer.parseInt(coord_three_x) < 0){
-            System.out.println("Error: One of the x points is negative and would go off the screen on the left.");
-            System.out.println("Remember when x is negative it goes left, and when it is posistive it goes right.");
-            System.exit(ABORT);
-        }
-        if(Integer.parseInt(coord_one_x) > 600 || Integer.parseInt(coord_two_x) > 600 || Integer.parseInt(coord_three_x) > 600){
-            System.out.println("Error: One of the x points is greater than the window and would go off the screen on the right.");
-            System.out.println("Remember when y is negative it goes left, and when it is posistive it goes right.");
-            System.exit(ABORT);
-        }
-        if (Integer.parseInt(coord_one_y) < 0 || Integer.parseInt(coord_two_y) < 0 || Integer.parseInt(coord_three_y) < 0){
-            System.out.println("Error: One of the y points is negative and would go off the screen on the top.");
-            System.out.println("Remember when y is negative it goes up, and when it is posistive it goes down.");
-            System.exit(ABORT);
-        }
-        if(Integer.parseInt(coord_one_y) > 600 || Integer.parseInt(coord_two_y) > 600 || Integer.parseInt(coord_three_y) > 600){
-            System.out.println("Error: One of the y points is greater than the window and would go off the screen on the bottom.");
-            System.out.println("Remember when y is negative it goes up, and when it is posistive it goes down.");
-            System.exit(ABORT);
-        }
+        g.fillOval(x1, y1, 10, 10);
+        g.fillOval(x2, y2, 10, 10);
+        g.fillOval(x3, y3, 10, 10);
+        Thread.sleep(3000);
+        draw(triangle);
 
-        scan.close();
-        g.setColor(Color.green);
-        g.fillPolygon(triangle);
 
     }//paint
 
