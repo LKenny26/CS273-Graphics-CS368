@@ -26,16 +26,29 @@ public class Boxes extends Canvas
 
         /*
          *  Proposed change to Boxes.java. 
-         *  Justification: Ideally students can center boxes easily and 
-         *  create more rectangles. The purpose of this change is to have the boxes semi complete
+         *  Justification: Ideally students can center boxes easily and create more rectangles. 
+         *  The purpose of this change is to have the boxes semi complete
          *  but lacking in the form of Coords or measurements. The student should be able to recogize what is 
-         *  wrong with each box and correct it. This also utlizes Thread.sleep() to ensure
-         *  students know where each box is supposed to be and when it gets drawn.
+         *  wrong with each box and correct it. Ideally the initailly negative coordinates should be able to 
+         *  be recognized by the student and then fixed. 
+         * 
+         *  This also utlizes Thread.sleep() to ensure
+         *  students know where each box is supposed to be and when it gets drawn. The labeling was done with black
+         *  text to contrast the white/grey looking background. With a font size of 50 to ensure the student
+         *  can clearly see the text. 
+         * 
          *  Context: Students have a hard time with Coords. The goal is to help the gain better knowledge of 
-         *  how the system works. 
+         *  how the system works. Hopefully the students can see that the negative numbers is what is wrong with code and 
+         *  is the reason the boxes are not showing. This way they comprehend that y being negative goes up and 
+         *  x being negative goes left.
+         * 
          *  Importance: With simple fixes in the beginning 
          *  perhaps the student may familiarize themself with the system to utlize futher along
-         *  in the lab.
+         *  in the lab. They should be able to test out some positive coords for the boxes
+         *  and realize that now the boxes are in frame. There are also boxes that are too big
+         *  which the student should also realize as the box goes off the screen.
+         * 
+         *  This should help them to complete Triangle.java which contains some further changes
          */
 
          // These Boxes are not drawing right...
